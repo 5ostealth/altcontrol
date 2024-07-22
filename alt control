@@ -1,0 +1,32 @@
+-- LocalPlayer is your character
+local player = game.Players.LocalPlayer
+
+-- Function to handle commands
+local function handleCommand(message)
+    local command, arg = string.match(message, "^/(%w+)%s*(.*)")
+
+    if command == "drop" then
+        -- Handle the /drop command
+        print("Drop command received")
+        -- Insert your drop logic here
+    elseif command == "cdrop" then
+        -- Handle the /cdrop command
+        print("CDrop command received")
+        -- Insert your cdrop logic here
+    elseif command == "cashdelete" then
+        -- Handle the /cashdelete command
+        print("CashDelete command received")
+        -- Insert your cashdelete logic here
+    elseif command == "setup" then
+        -- Handle the /setup command
+        print("Setup command received")
+        -- Insert your setup logic here
+    else
+        print("Unknown command")
+    end
+end
+
+-- Connect the handleCommand function to the player's chat
+player.Chatted:Connect(handleCommand)
+
+print("Command script loaded")
